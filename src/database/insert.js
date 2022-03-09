@@ -12,4 +12,18 @@ const add = async (question,answer,chatbotname) => {
     console.log("good job ")
 
 }
-export default add;
+const addMessage = async (data, author, type) => {
+
+
+    try {
+        await db.collection('chatbot').insertOne({ message: data, author: author, type: type });
+        db.save
+    } catch (error) {
+        console.log(error);
+    }
+
+    console.log("good job ")
+
+}
+
+export {add,addMessage};
