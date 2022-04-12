@@ -1,26 +1,33 @@
 import express from "express"
-import { add, addMessage} from "../database/insert.js"
+import { addNewChatbot ,add} from "../database/insert.js"
 import bodyParser from "body-parser"
 const router = express.Router()
 router.use(express.json())
 router.use(bodyParser.json());
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
- router.post('/',urlencodedParser, (req, res) => {
-    const data = req.body.data
-const author = req.body.author
-const type = req.body.type
+//  router.post('/',urlencodedParser, (req, res) => {
+//     const chatbotname = req.body.chatbotname
  
-     addMessage(data, author, type)
+//      addNewChatbot(chatbotname)
 
-    res.send("good job")
+//     res.send("good job")
+// })
+
+router.post('/', urlencodedParser, (req, res) => {
+
+
+  addNewChatbot()
+
+  res.send("good job")
 })
 
-
 router.post('/messages', urlencodedParser, (req, res) => {
-    const data = req.body.data
-const author = req.body.author
-const type = req.body.type
-addMessage(data, author, type)
+    const chatbotname = req.body.chatbotname
+    const question = req.body.question
+    const answer = req.body.answer
+    const keyword = req.body.keyword
+   
+    add(chatbotname,question,answer,keyword)
    
 
   res.send("good job")

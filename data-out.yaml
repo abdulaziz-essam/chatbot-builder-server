@@ -1,0 +1,50 @@
+_id: 62555f93eae3d83ac9cba0b5
+chatbotname: coffee shop
+email: azozek1420@gmail.com
+questions:
+  nlu:
+    - intent: greet
+      examples:
+        - Hi
+        - Hey
+        - Hello
+        - Greetings
+    - intent: chitchat
+      examples:
+        - How are you ?
+        - How are you doing ?
+    - intent: opening_hours
+      examples:
+        - When its opening time?
+        - When its closing time ?
+        - What time do you open?
+        - What time do you close?
+        - What time do you start working?
+        - Are you open at Tuesday ?
+    - intent: menu_questions
+      examples:
+        - Can i see your menu ?
+        - What kind of coffee do you have?
+        - do you sell dessert?
+        - What kind of coffee beans do you have??
+    - intent: location
+      examples:
+        - Where is your coffee's location?
+        - Can you send me the location ?
+        - Where is the place ?
+    - intent: branches
+      examples:
+        - How many branches do you have?
+        - Do you have a branch in Al - Khobar ?
+    - intent: custom_order
+      examples:
+        - Can i make a customized order?
+        - Do you accept custom order ?
+        - Do you take special order ?
+    - intent: music
+      examples:
+        - Does your coffee plays music?
+        - Can i study there ?
+  stories:
+    - story: ''
+      steps: []

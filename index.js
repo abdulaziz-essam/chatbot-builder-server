@@ -1,13 +1,13 @@
 import express from 'express';
-import update from "../server/src/route/updateRoute.js";
-import show from '../server/src/route/showRoute.js'
+import update from "./src/route/updateRoute.js";
+import show from './src/route/showRoute.js'
 import insert from "./src/route/addRoute.js"
 import bodyParser from "body-parser"
-import deleteMethod from '../server/src/route/deleteRoute.js'
+import deleteMethod from './src/route/deleteRoute.js'
 import cors from "cors"
 const app = express()
 
-const port = 4143
+const port = 4166
 app.use(cors())
 app.use('/update',update)
 app.use('/show',show)
