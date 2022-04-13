@@ -25,9 +25,9 @@ router.post('/messages', urlencodedParser, (req, res) => {
     const chatbotname = req.body.chatbotname
     const question = req.body.question
     const answer = req.body.answer
-    const keyword = req.body.keyword
+  
    
-    add(chatbotname,question,answer,keyword)
+    add(chatbotname,question,answer)
    
 
   res.send("good job")

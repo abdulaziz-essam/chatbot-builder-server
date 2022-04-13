@@ -4,6 +4,8 @@ import show from './src/route/showRoute.js'
 import insert from "./src/route/addRoute.js"
 import bodyParser from "body-parser"
 import deleteMethod from './src/route/deleteRoute.js'
+import train from "./src/route/train.js"
+import publish from "./src/route/publish.js"
 import cors from "cors"
 const app = express()
 
@@ -13,6 +15,8 @@ app.use('/update',update)
 app.use('/show',show)
 app.use("/add" ,insert )
 app.use("/delete",deleteMethod)
+app.use('/publish', publish)
+app.use('/train', train)
 app.use(express.json())
 app.use(bodyParser.json());
 

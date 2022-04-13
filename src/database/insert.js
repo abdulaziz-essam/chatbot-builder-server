@@ -1,5 +1,5 @@
 import db from '../database/connect.js';
-const add = async (chatbotname,question,answer,keyword) => {
+const add = async (chatbotname,question,answer) => {
 
 
     try {
@@ -52,6 +52,7 @@ const addNewChatbot = async () => {
                     {intent:"greet",
                         examples: ["Hi", "Hey", "Hello",
                             "Greetings"]
+                            
                     },
                     {
                         intent: "chitchat",
