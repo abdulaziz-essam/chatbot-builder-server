@@ -1,17 +1,11 @@
 import express from "express"
-import { addNewChatbot ,add} from "../database/insert.js"
+import { addNewChatbot, add, chatData } from "../database/insert.js"
 import bodyParser from "body-parser"
 const router = express.Router()
 router.use(express.json())
 router.use(bodyParser.json());
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
-//  router.post('/',urlencodedParser, (req, res) => {
-//     const chatbotname = req.body.chatbotname
- 
-//      addNewChatbot(chatbotname)
 
-//     res.send("good job")
-// })
 
 router.post('/', urlencodedParser, (req, res) => {
 
@@ -32,4 +26,17 @@ router.post('/messages', urlencodedParser, (req, res) => {
 
   res.send("good job")
  })
+
+router.post('/chat', urlencodedParser, (req, res) => {
+  
+
+  chatData()
+
+
+  res.send("good job")
+})
+
+
+
+
 export default router

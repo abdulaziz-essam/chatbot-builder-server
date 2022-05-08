@@ -11,7 +11,21 @@ const show =async () => {
                 let intentObjs = resp.data
                 let yamlStr = yaml.dump(intentObjs);
                 fs.writeFileSync('data-out.yaml', yamlStr, 'utf8');
+               
         });
 
 }
-export default show
+
+const inboxData=async()=>{
+   try {
+       let data = await db.collection("chat").findOne({
+           email: "azozek@gmail.com"
+        })
+        
+       return data;  
+   } catch (error) {
+       console.log(error)
+   }
+ 
+}
+export  {show ,inboxData}

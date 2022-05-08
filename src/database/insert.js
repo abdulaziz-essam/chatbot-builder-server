@@ -51,7 +51,7 @@ const addNewChatbot = async () => {
                 "nlu": [
                     {intent:"greet",
                         examples: ["Hi", "Hey", "Hello",
-                            "Greetings"]
+                            "Greetings"] 
                             
                     },
                     {
@@ -110,16 +110,24 @@ const addNewChatbot = async () => {
 
 
 }
-    //  console.log(data)
-    //     await db.collection('chatbot').updateOne(
-    //         { chatbotname: 2 },
-    //         { $push: { 'questions.intents.0.examples': "new data" } }
-    //     )
-    //     db.save
-    // console.log("good job ")
-    //     
- 
+    
+
+// insert chatbot chats to the database
+const chatData = async ()=>{
+try {
+    await db.collection('chat').insertOne({
+email : "azozek@gmail.com" ,
+questions : [
+{question : "how old are you " ,answer :"no answer" , date :"7/7/2022" , status : "unanswered" }
+
+] 
+
+})
+    db.save
+
+} catch (err) { console.log(err)}
+}
 
 
 
-export {add,addNewChatbot};
+export {add,addNewChatbot , chatData};

@@ -8,8 +8,7 @@ import train from "./src/route/train.js"
 import publish from "./src/route/publish.js"
 import cors from "cors"
 const app = express()
-
-const port = 4166
+const port = 4170
 app.use(cors())
 app.use('/update',update)
 app.use('/show',show)
