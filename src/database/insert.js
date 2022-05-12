@@ -101,7 +101,14 @@ const addNewChatbot = async () => {
                 stories: [{
                     story: ""
                     , steps: []
+                }] ,
+                userQuestions :[{
+                    question: "how old are you" , 
+                    answer :"no answer " ,
+                    status:"unanswerd" 
+                    , date:"4/7/2022"
                 }]
+
             }
         })
         db.save
@@ -113,19 +120,21 @@ const addNewChatbot = async () => {
     
 
 // insert chatbot chats to the database
-const chatData = async ()=>{
-try {
-    await db.collection('chat').insertOne({
-email : "azozek@gmail.com" ,
-questions : [
-{question : "how old are you " ,answer :"no answer" , date :"7/7/2022" , status : "unanswered" }
+const chatData = async ()=> {
 
-] 
 
-})
-    db.save
+    try {
+        await db.collection('chat').updateOne(
+            { email: "azozek1420" },
+            { $push: { comics :{name: name , release_date: release_date ,quantity:quantity}}}
+        )
+        db.save
+    } catch (error) {
+        console.log(error);
+    }
 
-} catch (err) { console.log(err)}
+    console.log("good job ")
+
 }
 
 

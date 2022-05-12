@@ -18,8 +18,8 @@ const show =async () => {
 
 const inboxData=async()=>{
    try {
-       let data = await db.collection("chat").findOne({
-           email: "azozek@gmail.com"
+       let data = await db.collection("chatbot").findOne({
+           email: "azozek1420@gmail.com"
         })
         
        return data;  
