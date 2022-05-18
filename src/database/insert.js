@@ -6,8 +6,9 @@ const add = async (chatbotname,question,answer) => {
         
         await db.collection('chatbot').updateOne(
             { chatbotname: chatbotname },
-            { $push: { 'questions.intents.examples': question
-        ,"questions.intents.0.responses":answer 
+            {
+                $push: { 'questions.userQuestions': question
+        ,"questions.intents.responses":answer 
      } }
         )
     

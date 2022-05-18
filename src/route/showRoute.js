@@ -1,5 +1,5 @@
 import express from "express" 
-import {show ,inboxData} from "../database/show.js"
+import {show ,inboxData,Dashboard_data} from "../database/show.js"
 
 import bodyParser from "body-parser"
 const router = express.Router()
@@ -29,4 +29,9 @@ let data=inboxData()
 
     })
 })
+router.get('/dashboard', urlencodedParser, (req, res) => {
+    let data = Dashboard_data()
+res.json(data)
+})
+
 export default router
